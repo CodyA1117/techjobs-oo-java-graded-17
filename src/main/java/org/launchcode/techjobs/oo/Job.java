@@ -49,6 +49,28 @@ public class Job {
         return Objects.hashCode(id);
     }
 
+    @Override
+    public String toString() {
+
+        String nameValue = (this.getName() != null && !this.getName().isEmpty()) ? this.getName() : "Data not available";
+        String employerValue = (this.getEmployer() != null && this.getEmployer().getValue() != null && !this.getEmployer().getValue().isEmpty()) ? this.getEmployer().getValue() : "Data not available";
+        String locationValue = (this.getLocation() != null && this.getLocation().getValue() != null && !this.getLocation().getValue().isEmpty()) ? this.getLocation().getValue() : "Data not available";
+        String positionTypeValue = (this.getPositionType() != null && this.getPositionType().getValue() != null && !this.getPositionType().getValue().isEmpty()) ? this.getPositionType().getValue() : "Data not available";
+        String coreCompetencyValue = (this.getCoreCompetency() != null && this.getCoreCompetency().getValue() != null && !this.getCoreCompetency().getValue().isEmpty()) ? this.getCoreCompetency().getValue() : "Data not available";
+
+
+        return System.lineSeparator() +
+                "ID: " + this.getId() + System.lineSeparator() +
+                "Name: " + nameValue + System.lineSeparator() +
+                "Employer: " + employerValue + System.lineSeparator() +
+                "Location: " + locationValue + System.lineSeparator() +
+                "Position Type: " + positionTypeValue + System.lineSeparator() +
+                "Core Competency: " + coreCompetencyValue + System.lineSeparator();
+    }
+
+
+
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
